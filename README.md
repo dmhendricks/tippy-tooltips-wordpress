@@ -32,7 +32,11 @@ define( 'TIPPY_ENQUEUE_SCRIPTS', 'public' );
 define( 'TIPPY_ENQUEUE_SCRIPTS', true );
 ```
 
-If this constant is not defined, it defaults to loading both.
+If this constant is not defined, it defaults to loading in both. You can also define this constant as `false` to selectively load it using:
+
+```php
+wp_enqueue_script( 'tippy-tooltips' );
+```
 
 ### CDN Support
 

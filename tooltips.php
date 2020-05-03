@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Tippy Tooltips
  * Description:       Add Tippy.js tooltips to WordPress
- * Version:           0.7.0
+ * Version:           1.0.0
  * Requires at least: 4.7
  * Requires PHP:      5.6
  * Author:            Daniel M. Hendricks
@@ -46,7 +46,7 @@ final class Tippy_Tooltips {
   public static function enqueue_scripts() {
 
     $action = current_action();
-    $target = defined( 'TIPPY_ENQUEUE_SCRIPTS' ) && TIPPY_ENQUEUE_SCRIPTS ? TIPPY_ENQUEUE_SCRIPTS : true;
+    $target = defined( 'TIPPY_ENQUEUE_SCRIPTS' ) ? TIPPY_ENQUEUE_SCRIPTS : true;
     $script_url = self::get_config( 'plugin_url' ) . 'dist/js/tippy-tooltips.min.js';
 
     // Use jsDelivr CDN
@@ -54,9 +54,13 @@ final class Tippy_Tooltips {
       $script_url = 'https://cdn.jsdelivr.net/gh/dmhendricks/tippy-tooltips-wordpress/dist/js/tippy-tooltips.min.js';
     }
 
-    // Enqueue scripts
+    // Register script
+    wp_register_script( 'tippy-tooltips', $script_url, null, self::get_config( 'version' ), true );
+    if( TIPPY_ENQUEUE_SCRIPTS === false ) return;
+
+    // Enqueue script
     if( $target === true || ( $action == 'wp_enqueue_scripts' && $target == 'public' ) || ( $action == 'admin_enqueue_scripts' && $target == 'admin' ) ) {
-      wp_enqueue_script( 'tippy-tooltips', $script_url, null, self::get_config( 'version' ), true );
+      wp_enqueue_script( 'tippy-tooltips' );
     }
 
   }
