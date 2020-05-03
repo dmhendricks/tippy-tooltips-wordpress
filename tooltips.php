@@ -8,6 +8,8 @@
  * Author:            Daniel M. Hendricks
  * Author URI:        https://daniel.hn/
  * Plugin URI:        https://github.com/dmhendricks/tippy-tooltips-wordpress/
+ * License:           GPL2+
+ * License URI:       https://github.com/dmhendricks/tippy-tooltips-wordpress/blob/master/LICENSE
  */
 namespace CloudVerve;
 defined( 'ABSPATH' ) || die();

@@ -18,7 +18,7 @@ After the plugin is installed and activated, you can [add Tippy tooltips to HTML
 
 ## Configuration
 
-This plugin does not have a settings page, but you configure when you want Tippy to load in WP Admin only, the public/frontend of the site, or both by defining the `TIPPY_ENQUEUE_SCRIPTS` constant in `wp-config.php`:
+This plugin does not have a settings page, but you can _optionally_ configure when you want Tippy to load in WP Admin only, the public/frontend of the site, or both by defining the `TIPPY_ENQUEUE_SCRIPTS` constant in `wp-config.php`:
 
 
 ```php
@@ -32,7 +32,7 @@ define( 'TIPPY_ENQUEUE_SCRIPTS', 'public' );
 define( 'TIPPY_ENQUEUE_SCRIPTS', true );
 ```
 
-If this constant is not defined, it defaults to loading in both. You can also define this constant as `false` to selectively load it using:
+If this constant is not defined, it defaults to loading in both. You can also define this constant as `false` and load it selectively using:
 
 ```php
 wp_enqueue_script( 'tippy-tooltips' );
@@ -40,7 +40,7 @@ wp_enqueue_script( 'tippy-tooltips' );
 
 ### CDN Support
 
-If you'd like the scripts to load from [jsDelivr](https://www.jsdelivr.com/features), you can add the following constant:
+If you'd like the scripts to load from [jsDelivr](https://www.jsdelivr.com/features), you can define the following constant:
 
 ```php
 define( 'TIPPY_ENABLE_CDN', true );
