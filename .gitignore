@@ -1,0 +1,10 @@
+__MACOSX
+**.DS_Store*
+ehthumbs.db
+Thumbs.db
+.npmrc
+._*
+*.un~
+*.log
+*.lock
+node_modules/

@@ -1,0 +1,23 @@
+{
+  "name": "tippy-tooltips",
+  "version": "1.0.0",
+  "author": "Daniel M. Hendricks",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "gulp": "^4.0",
+    "gulp-concat": "^2.6",
+    "gulp-rename": "^2.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.4.0",
+    "tippy.js": "^6.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmhendricks/tippy-tooltips-wordpress.git"
+  }
+}
