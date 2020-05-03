@@ -47,9 +47,16 @@ final class Tippy_Tooltips {
 
     $action = current_action();
     $target = defined( 'TIPPY_ENQUEUE_SCRIPTS' ) && TIPPY_ENQUEUE_SCRIPTS ? TIPPY_ENQUEUE_SCRIPTS : true;
+    $script_url = self::get_config( 'plugin_url' ) . 'dist/js/tippy-tooltips.min.js';
 
+    // Use jsDelivr CDN
+    if( defined( 'TIPPY_ENABLE_CDN' ) && TIPPY_ENABLE_CDN ) {
+      $script_url = 'https://cdn.jsdelivr.net/gh/dmhendricks/tippy-tooltips-wordpress/dist/js/tippy-tooltips.min.js';
+    }
+
+    // Enqueue scripts
     if( $target === true || ( $action == 'wp_enqueue_scripts' && $target == 'public' ) || ( $action == 'admin_enqueue_scripts' && $target == 'admin' ) ) {
-      wp_enqueue_script( 'tippy-tooltips', self::get_config( 'plugin_url' ) . 'dist/js/tippy-tooltips.min.js', null, self::get_config( 'version' ), true );
+      wp_enqueue_script( 'tippy-tooltips', $script_url, null, self::get_config( 'version' ), true );
     }
 
   }
