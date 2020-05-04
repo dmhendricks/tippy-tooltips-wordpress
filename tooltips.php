@@ -58,7 +58,7 @@ final class Tippy_Tooltips {
 
     // Register script
     wp_register_script( 'tippy-tooltips', $script_url, null, self::get_config( 'version' ), true );
-    if( TIPPY_ENQUEUE_SCRIPTS === false ) return;
+    if( defined( 'TIPPY_ENQUEUE_SCRIPTS') && TIPPY_ENQUEUE_SCRIPTS === false ) return;
 
     // Enqueue script
     if( $target === true || ( $action == 'wp_enqueue_scripts' && $target == 'public' ) || ( $action == 'admin_enqueue_scripts' && $target == 'admin' ) ) {
