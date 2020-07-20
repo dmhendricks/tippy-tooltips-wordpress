@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Tippy Tooltips
  * Description:       Add Tippy.js tooltips to WordPress
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 4.7
  * Requires PHP:      5.6
  * Author:            Daniel M. Hendricks
